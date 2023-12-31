@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocomotiveScroll</title>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/locomotive.css">
+</head>
+<body>
+    
+
+    <header>
+        HEADER
+    </header>
+    <main data-scroll-container>
+        <section > 
+            <img data-scroll data-scroll-speed="-.7" src="/images/view-3d-video-game-controller.jpg" alt="">
+            <h1 data-scroll data-scroll-speed=".4">PARALLAX!</h1>
+        </section>
+        <section data-scroll-section>
+            <p data-scroll data-scroll-speed="-.1">content</p>
+            <p 
+                data-scroll 
+                data-scroll-repeat 
+                data-scroll-css-progress
+                data-scroll-position="middle,end"
+                data-scroll-speed=".1"
+                data-scroll-call="scrollEvent"
+            >content offset</p>
+        </section>
+        <section 
+            data-scroll 
+            data-scroll-repeat 
+            data-scroll-position="middle, end"
+            data-scroll-delay="1" 
+            data-scroll-offset="0 0"
+        >
+            <img src="/images/Dragon-Ball-Z-PNG-Pic.png" alt="" class="person">
+            <img src="/images/Dragon-Ball-Z-Series-PNG.png" alt="" class="person">
+        </section>
+    </main>
+    <footer>
+        FOOTER
+    </footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>

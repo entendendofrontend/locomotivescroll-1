@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+:root{
+
+    --bgBases : orangered;
+    --bg1 :#ecf0f1; 
+    --bg2 :#5b27bd;
+    --color1 : var(--bg2); 
+    --color2 : var(--bg1); 
+    /* dinamic */
+    --progress : 0;
+    
+}
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif;}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--bgBases);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(128, 6, 6);
+  }
+
+header {
+    position: fixed;
+    top:0;
+    height: 100px;
+    z-index: 2;
+}
+
+header,footer,section,main{
+    width: 100%;
+    display: flex; justify-content: center; align-items: center; flex-flow: column;
+}
+
+header, footer{
+    background-color: var(--bgBases);
+    height: 80px;
+    color: var(--color2);
+    font-size: 2.5em;
+}
+
+main{
+    min-height: 70vh;
+    justify-content: flex-start;
+}
+
+h1{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    margin: auto;
+    z-index: 1;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px 10vw;
+    background-color: rgba(255,255,255,.5) ;
+    box-shadow: 0 0 10px 2px rgba(255,255,255,.5);
+}
+
+section{
+    min-height: 80vh;
+    font-size: 2em;
+    overflow: hidden;
+    transition: background-color 2s;
+    display: flex;
+    flex-flow: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+section div{
+    transition: all 1s ease;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin: 10px;
+    background-color: #ecf0f1;
+}
+
+/* alternando cores */
+section:nth-child(odd){
+    background-color: var(--bg1);
+    color: var(--color1);
+    text-shadow: 0 3px 5px var(--bg2);
+}
+section:nth-child(even){
+    background-color: var(--bg2);
+    color: var(--color2);
+    text-shadow: 0 3px 5px var(--bg1);
+}
+
+/* dragonball */
+section .person{
+    transition: all 1s ease;
+    position: relative;
+}
+section .person:nth-child(odd){
+    max-width: 300px;
+    right: -100vw;
+}
+section .person:nth-child(even){
+    max-width: 200px;
+    left: -100vw;
+}
+section.is-inview{
+    background-color: rgb(75, 5, 75);
+    display: flex;
+    flex-flow: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section.is-inview .person:nth-child(odd){
+    right: 20px;
+}
+section.is-inview .person:nth-child(even){
+    left: 20px;
+}
+
+section img{
+    object-fit: cover;
+    object-position: center center;
+    width: 120%;
+    height: 120%;
+}
+
+/* 
+p{
+    opacity: 0;
+} */
+
+/* animations call */
+.pEnterView{
+    transition: font-size 1s;
+    font-size: 50px;
+    opacity: var(--progress);
+}
